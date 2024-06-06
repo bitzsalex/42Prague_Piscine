@@ -6,7 +6,8 @@ void ft_print_comb(void) {
     for (int i = '0'; i <= '7'; i++) {
         for (int j = i + 1; j <= '8'; j++) {
             for (int k = j + 1; k <= '9'; k++) {
-                char str[i == '7' && k == '9' ? 3 : 5];
+                int size = i == '7' && k == '9' ? 3 : 5;
+                char str[size];
                 str[0] = i;
                 str[1] = j;
                 str[2] = k;
@@ -14,7 +15,8 @@ void ft_print_comb(void) {
                     str[3] = ',';
                     str[4] = ' ';
                 }
-                write(1, str, sizeof(str));
+                // TODO: not allowed to use sizeof function
+                write(1, str, size);
             }
         }
     }
