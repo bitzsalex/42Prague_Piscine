@@ -10,6 +10,10 @@ void rush01(int x, int y);
 void rush01D(int x, int y);
 void rush01F(int x, int y);
 
+void rush02(int x, int y);
+void rush02D(int x, int y);
+void rush02F(int x, int y);
+
 void ft_putchar(char ch);
 
 int main(int argc, char *argv[]) {
@@ -154,6 +158,53 @@ int main(int argc, char *argv[]) {
     // rush01F(10, 8);
     // ft_putchar('\n');
     // rush01F(123, 42);
+
+
+    /** RUSH02 SUBJECT
+     * ===================*/
+    // rush02(5, 3);
+    // ft_putchar('\n');
+    // rush02(5, 1);
+    // ft_putchar('\n');
+    // rush02(1, 1);
+    // ft_putchar('\n');
+    // rush02(1, 5);
+    // ft_putchar('\n');
+    // rush02(4, 4);
+    // ft_putchar('\n');
+    // rush02(10, 8);
+    // ft_putchar('\n');
+    // rush02(123, 42);
+
+    // do...while loop solution
+    // rush02D(5, 3);
+    // ft_putchar('\n');
+    // rush02D(5, 1);
+    // ft_putchar('\n');
+    // rush02D(1, 1);
+    // ft_putchar('\n');
+    // rush02D(1, 5);
+    // ft_putchar('\n');
+    // rush02D(4, 4);
+    // ft_putchar('\n');
+    // rush02D(10, 8);
+    // ft_putchar('\n');
+    // rush02D(123, 42);
+
+    // for loop solution
+    // rush02F(5, 3);
+    // ft_putchar('\n');
+    // rush02F(5, 1);
+    // ft_putchar('\n');
+    // rush02F(1, 1);
+    // ft_putchar('\n');
+    // rush02F(1, 5);
+    // ft_putchar('\n');
+    // rush02F(4, 4);
+    // ft_putchar('\n');
+    // rush02F(10, 8);
+    // ft_putchar('\n');
+    // rush02F(123, 42);
 
     return 0;
 }
