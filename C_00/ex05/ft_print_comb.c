@@ -7,15 +7,11 @@ void ft_print_comb(void) {
         for (int j = i + 1; j <= '8'; j++) {
             for (int k = j + 1; k <= '9'; k++) {
                 int size = i == '7' && k == '9' ? 3 : 5;
-                char str[size];
-                str[0] = i;
-                str[1] = j;
-                str[2] = k;
+                char str[size] = {i, j, k};
                 if (!(i == '7' && k == '9')) {
                     str[3] = ',';
                     str[4] = ' ';
                 }
-                // TODO: not allowed to use sizeof function
                 write(1, str, size);
             }
         }
