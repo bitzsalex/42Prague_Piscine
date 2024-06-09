@@ -4,13 +4,16 @@ char getPrintedChar(int colX, int rowY, int x, int y);
 char getPrintedChar(int colX, int rowY, int x, int y) {
     char printedChar = ' ';
 
+    // check if we are on four of the edges
     if (
         (colX == 1 && rowY == 1) || 
         (colX == x && rowY == y) || 
         (colX == x && rowY == 1) || 
         (colX == 1 && rowY == y)
     ) printedChar = 'o';
+    // check if we are on the first and last column for each row
     else if (colX == 1 || colX == x) printedChar = '|';
+    // check if we are on the first and last row for each column
     else if (rowY == 1 || rowY == y) printedChar = '-';
 
     return printedChar;

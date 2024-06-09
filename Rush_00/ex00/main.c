@@ -14,24 +14,28 @@ void rush02(int x, int y);
 void rush02D(int x, int y);
 void rush02F(int x, int y);
 
+void rush03(int x, int y);
+void rush03D(int x, int y);
+void rush03F(int x, int y);
+
 void ft_putchar(char ch);
 
 int main(int argc, char *argv[]) {
     /** MAIN SUBJECT
      * ===================*/
-    // rush(5, 3);
-    // ft_putchar('\n');
-    // rush(5, 1);
-    // ft_putchar('\n');
-    // rush(1, 1);
-    // ft_putchar('\n');
-    // rush(1, 5);
-    // ft_putchar('\n');
-    // rush(4, 4);
-    // ft_putchar('\n');
-    // rush(10, 8);
-    // ft_putchar('\n');
-    // rush(123, 42);
+    rush(5, 3);
+    ft_putchar('\n');
+    rush(5, 1);
+    ft_putchar('\n');
+    rush(1, 1);
+    ft_putchar('\n');
+    rush(1, 5);
+    ft_putchar('\n');
+    rush(4, 4);
+    ft_putchar('\n');
+    rush(10, 8);
+    ft_putchar('\n');
+    rush(123, 42);
 
     // do...while loop solution
     // ft_putchar('\n');
@@ -205,6 +209,53 @@ int main(int argc, char *argv[]) {
     // rush02F(10, 8);
     // ft_putchar('\n');
     // rush02F(123, 42);
+
+
+    /** RUSH03 SUBJECT
+     * ===================*/
+    // rush03(5, 3);
+    // ft_putchar('\n');
+    // rush03(5, 1);
+    // ft_putchar('\n');
+    // rush03(1, 1);
+    // ft_putchar('\n');
+    // rush03(1, 5);
+    // ft_putchar('\n');
+    // rush03(4, 4);
+    // ft_putchar('\n');
+    // rush03(10, 8);
+    // ft_putchar('\n');
+    // rush03(123, 42);
+
+    // do...while loop solution
+    // rush03D(5, 3);
+    // ft_putchar('\n');
+    // rush03D(5, 1);
+    // ft_putchar('\n');
+    // rush03D(1, 1);
+    // ft_putchar('\n');
+    // rush03D(1, 5);
+    // ft_putchar('\n');
+    // rush03D(4, 4);
+    // ft_putchar('\n');
+    // rush03D(10, 8);
+    // ft_putchar('\n');
+    // rush03D(123, 42);
+
+    // for loop solution
+    // rush03F(5, 3);
+    // ft_putchar('\n');
+    // rush03F(5, 1);
+    // ft_putchar('\n');
+    // rush03F(1, 1);
+    // ft_putchar('\n');
+    // rush03F(1, 5);
+    // ft_putchar('\n');
+    // rush03F(4, 4);
+    // ft_putchar('\n');
+    // rush03F(10, 8);
+    // ft_putchar('\n');
+    // rush03F(123, 42);
 
     return 0;
 }
