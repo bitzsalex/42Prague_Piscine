@@ -2,30 +2,30 @@
 
 void ft_putnbr(int num);
 
-void ft_putnbr(int num)
+void	ft_putnbr(int num)
 {
-    char printedChar = '\0', numberDigits[12];
-    int counter = 0;
+	char	number_digits[12];
+	int		counter;
 
-    // check if it is negative
-    if (num < 0)
-    {
-        printedChar = '-';
-        num *= -1;
-        write(1, &printedChar, 1);
-    }
-
-    // get individual char in reverse order
-    while (num > 0)
-    {
-        numberDigits[counter] = (num % 10) + '0';
-        num = num / 10;
-        counter++;
-    }
-
-    // print backwards
-    while (--counter >= 0)
-        write(1, (numberDigits + counter), 1);
+	counter = 0;
+	if (num != 0)
+	{
+		if (num < 0)
+		{
+			num *= -1;
+			write(1, "-", 1);
+		}
+		while (num > 0)
+		{
+			number_digits[counter] = (num % 10) + '0';
+			num = num / 10;
+			counter++;
+		}
+		while (--counter >= 0)
+			write(1, (number_digits + counter), 1);
+	}
+	else
+		write(1, "0", 1);
 }
 
 int main()
