@@ -10,7 +10,7 @@ void generate_combination(char *buffer, int index, int start, int end);
 int is_last_comb(char *buffer, int end)
 {
     int itr = 1;
-    char last_digit = (10 - end) + '0';
+    char last_digit = (g_digit_count - end) + '0';
 
     while (itr < end)
     {
@@ -51,12 +51,12 @@ void generate_combination(char *buffer, int index, int start, int end)
 
 void ft_print_combn(int n)
 {
-    char buffer[10];
+    char buffer[g_digit_count];
     generate_combination(buffer, 0, 0, n);
 }
 
 int main()
 {
-    ft_print_combn(4);
+    ft_print_combn(2);
     return 0;
 }
