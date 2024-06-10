@@ -1,13 +1,16 @@
 #include <unistd.h>
 
 void ft_print_comb(void);
-void print_comb(int outer, int inner, int deep_inner, char *separator);
+void print_comb(int outer, int inner, int deep_inner);
 
-void print_comb(int outer, int inner, int deep_inner, char *separator)
+void print_comb(int outer, int inner, int deep_inner)
 {
+    char separator[] = ", ";
+
     // initialize the string
     char str[3] = {outer + '0', inner + '0', deep_inner + '0'};
     write(1, str, 3);
+    
     // print separator if we are not at the end
     if (!(outer == 7 && deep_inner == 9))
         write(1, separator, 2);
@@ -15,7 +18,6 @@ void print_comb(int outer, int inner, int deep_inner, char *separator)
 
 void ft_print_comb(void)
 {
-    char separator[] = ", ";
     int outer = 0, inner, deep_inner;
 
     while (outer <= 7)
@@ -28,7 +30,7 @@ void ft_print_comb(void)
 
             while (deep_inner <= 9)
             {
-                print_comb(outer, inner, deep_inner, separator);
+                print_comb(outer, inner, deep_inner);
                 deep_inner++;
             }
 
