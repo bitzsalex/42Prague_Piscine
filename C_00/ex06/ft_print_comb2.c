@@ -16,7 +16,7 @@ void print_comb(int num1, int num2)
 
 void ft_print_comb2(void)
 {
-    int outer = 0, inner, size;
+    int outer = 0, inner;
     char separater[] = ", ";
 
     // go until 98
