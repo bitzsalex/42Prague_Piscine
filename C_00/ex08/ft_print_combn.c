@@ -25,7 +25,6 @@ int is_last_comb(char *buffer, int end)
 
 void print_combination(char *buffer, int end)
 {
-    int itr = 0;
     char separator[] = ", ";
     char last_digit = (g_digit_count - end) + '0';
     write(1, buffer, end);
