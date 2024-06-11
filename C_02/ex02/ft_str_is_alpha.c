@@ -15,6 +15,7 @@ int ft_str_is_alpha(char *str)
 
 int main()
 {
+	printf("is empty alpha %d\n", ft_str_is_alpha(""));
 	printf("is ABCDEFGHIJKLMNOPQRSTUVWXYZ alpha %d\n", ft_str_is_alpha("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
 	printf("is abcdefghijklmnopqrstuvwxyz alpha %d\n", ft_str_is_alpha("abcdefghijklmnopqrstuvwxyz"));
 	printf("is 0123st alpha %d\n", ft_str_is_alpha("0123st"));
