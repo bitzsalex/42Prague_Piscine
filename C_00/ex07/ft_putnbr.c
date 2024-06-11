@@ -1,37 +1,41 @@
 #include <unistd.h>
+#include <limits.h>
 
 void ft_putnbr(int num);
+void print_digits(int num);
 
-void	ft_putnbr(int num)
+void print_digits(int num)
 {
-	char	number_digits[12];
-	int		counter;
+	char ch;
 
-	counter = 0;
-	if (num != 0)
+	if (num == 0)
+		return;
+	print_digits(num / 10);
+	ch = (num % 10) + '0';
+	write(1, &ch, 1);
+}
+
+void ft_putnbr(int num)
+{
+	if (num >= INT_MIN && num <= INT_MAX)
 	{
+		if (num == 0)
+		{
+			write(1, "0", 1);
+			return;
+		}
 		if (num < 0)
 		{
-			num *= -1;
 			write(1, "-", 1);
+			num *= -1;
 		}
-		while (num > 0)
-		{
-			number_digits[counter] = (num % 10) + '0';
-			num = num / 10;
-			counter++;
-		}
-		while (--counter >= 0)
-			write(1, (number_digits + counter), 1);
+		print_digits(num);
 	}
-	else
-		write(1, "0", 1);
 }
 
 int main()
 {
-    ft_putnbr(42);
-    ft_putnbr(4563);
-    ft_putnbr(-4563);
-    return 0;
+	ft_putnbr(4563);
+	ft_putnbr(-4563);
+	return 0;
 }
