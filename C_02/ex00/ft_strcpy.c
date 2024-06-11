@@ -1,4 +1,3 @@
-#include <string.h>
 #include <stdio.h>
 
 char *ft_strcpy(char *dest, char *src);
@@ -8,10 +7,10 @@ char *ft_strcpy(char *dest, char *src)
 	if (*src == '\0')
 	{
 		*dest = '\0';
-		return NULL;
+		return dest;
 	}
 	*dest = *src;
-	ft_strcpy(++dest, ++src);
+	ft_strcpy(dest + 1, src + 1);
 
 	return (dest);
 }
