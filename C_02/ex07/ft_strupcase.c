@@ -33,6 +33,6 @@ int main()
 {
 	// char str[] = "abcAb1";
 	char str[] = "alkdklsjgfsAAArtu1213";
-	printf("convert %s to %s\n", str, ft_strupcase(str));
+	printf("%s\n", ft_strupcase(str));
 	return (0);
 }
