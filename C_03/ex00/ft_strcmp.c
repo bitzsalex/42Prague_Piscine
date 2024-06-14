@@ -1,9 +1,18 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 02:25:34 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 02:25:44 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2);
+int	ft_strcmp(char *s1, char *s2);
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 != '\0')
 	{
@@ -14,19 +23,5 @@ int ft_strcmp(char *s1, char *s2)
 	}
 	if (*s2 != '\0')
 		return (-1 * (int)*s2);
-	return (0);
-}
-
-int main()
-{
-	printf("compare ustv with abdc is %d\n", strcmp("ustv", "abdc"));
-	printf("compare ustv with ust is %d\n", strcmp("ustv", "ust"));
-	printf("compare ust with ustb is %d\n", strcmp("ust", "ustb"));
-	printf("compare ust with ust is %d\n", strcmp("ust", "ust"));
-	printf("\n");
-	printf("compare ustv with abdc is %d\n", ft_strcmp("ustv", "abdc"));
-	printf("compare ustv with ust is %d\n", ft_strcmp("ustv", "ust"));
-	printf("compare ust with ustb is %d\n", ft_strcmp("ust", "ustb"));
-	printf("compare ust with ust is %d\n", ft_strcmp("ust", "ust"));
 	return (0);
 }

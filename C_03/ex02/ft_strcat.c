@@ -1,11 +1,20 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 02:26:22 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 02:26:31 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src);
+char	*ft_strcat(char *dest, char *src);
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	char *ptr;
+	char	*ptr;
 
 	if (*dest == '\0')
 	{
@@ -19,28 +28,6 @@ char *ft_strcat(char *dest, char *src)
 		*ptr = '\0';
 		return (dest);
 	}
-
 	ft_strcat(dest + 1, src);
 	return (dest);
-}
-
-int main()
-{
-	char dest1[16] = "Hello ",
-		 src1[] = "World!";
-	char dest2[9] = "Hello ",
-		 src2[] = "World!";
-	char dest3[9] = "Hello ",
-		 src3[] = "";
-	char dest4[9] = "",
-		 src4[] = "World!";
-	// printf("concat %s\n", strcat(dest1, src1));
-	// printf("concat %s\n", strcat(dest2, src2));
-	// printf("concat %s\n", strcat(dest3, src3));
-	// printf("concat %s\n", strcat(dest4, src4));
-
-	printf("concat %s\n", ft_strcat(dest1, src1));
-	printf("concat %s\n", ft_strcat(dest2, src2));
-	printf("concat %s\n", ft_strcat(dest3, src3));
-	printf("concat %s\n", ft_strcat(dest4, src4));
 }
