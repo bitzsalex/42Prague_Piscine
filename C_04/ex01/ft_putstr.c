@@ -1,21 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 05:25:56 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 05:25:58 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
 
-void ft_putstr(char *str);
+void	ft_putstr(char *str);
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	while (*str != '\0')
-	{
-		write(1, str, 1);
-		str += 1;
-	}
-}
-
-int main()
-{
-	ft_putstr("name");
-	printf("\n");
-	ft_putstr("something");
-	return 0;
+	if (*str == '\0')
+		return ;
+	write(1, str, 1);
+	ft_putstr(str + 1);
 }
