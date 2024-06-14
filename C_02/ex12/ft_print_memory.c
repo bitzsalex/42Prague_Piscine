@@ -1,16 +1,27 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:33:15 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:33:18 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-char *get_hex_representation(unsigned long num, char *dest, int size);
-void print_address_hex(void *ptr);
-void print_content_hex(char *addr, int size);
-void print_content_char(char *addr, int size);
-void *ft_print_memory(void *addr, unsigned int size);
+char	*get_hex_representation(unsigned long num, char *dest, int size);
+void	print_address_hex(void *ptr);
+void	print_content_hex(char *addr, int size);
+void	print_content_char(char *addr, int size);
+void	*ft_print_memory(void *addr, unsigned int size);
 
-char *get_hex_representation(unsigned long num, char *dest, int size)
+char	*get_hex_representation(unsigned long num, char *dest, int size)
 {
-	int counter;
-	int remainder;
+	int	counter;
+	int	remainder;
 
 	counter = size - 1;
 	while (num)
@@ -28,24 +39,25 @@ char *get_hex_representation(unsigned long num, char *dest, int size)
 	return (dest);
 }
 
-void print_address_hex(void *ptr)
+void	print_address_hex(void *ptr)
 {
-	char hex[16];
-	unsigned long addr;
+	char			hex[16];
+	unsigned long	addr;
 
 	addr = (unsigned long)ptr;
 	write(1, get_hex_representation(addr, hex, 16), 16);
 	write(1, ":", 1);
 }
 
-void print_content_hex(char *addr, int size)
+// 32 is because 16 characters each represented by 2 hex
+void	print_content_hex(char *addr, int size)
 {
-	int itr;
-	int counter;
-	char hex[2];
+	int		itr;
+	int		counter;
+	char	hex[2];
 
 	itr = 0;
-	counter = 32; // 16 characters each represented by 2 hex
+	counter = 32;
 	while (itr < size)
 	{
 		if (counter % 4 == 0)
@@ -53,7 +65,7 @@ void print_content_hex(char *addr, int size)
 		write(1, get_hex_representation((int)*addr, hex, 2), 2);
 		counter -= 2;
 		if (*addr == '\0')
-			break;
+			break ;
 		addr++;
 		itr++;
 	}
@@ -66,9 +78,9 @@ void print_content_hex(char *addr, int size)
 	}
 }
 
-void print_content_char(char *addr, int size)
+void	print_content_char(char *addr, int size)
 {
-	int itr;
+	int	itr;
 
 	itr = 0;
 	write(1, " ", 1);
@@ -79,15 +91,16 @@ void print_content_char(char *addr, int size)
 		else
 			write(1, addr, 1);
 		if (*addr == '\0')
-			break;
+			break ;
 		addr++;
 		itr++;
 	}
 }
 
-void *ft_print_memory(void *addr, unsigned int size)
+// we like to print 16 characters perline
+void	*ft_print_memory(void *addr, unsigned int size)
 {
-	char *ptr;
+	char	*ptr;
 
 	if (size)
 	{
@@ -95,24 +108,26 @@ void *ft_print_memory(void *addr, unsigned int size)
 		while (*ptr != '\0')
 		{
 			print_address_hex(ptr);
-			print_content_hex(ptr, size);
-			print_content_char(ptr, size);
+			print_content_hex(ptr, 16);
+			print_content_char(ptr, 16);
 			write(1, "\n", 1);
 			ptr += size;
 		}
 	}
-
 	return (addr);
 }
 
+#include <stdio.h>
+#include <unistd.h>
+
 int main()
 {
-	char str[6][16] = {
+	char str[6][20] = {
 		"Bonjour les amin",
 		"ches\t\n\tc\a est fo",
 		"u\ttout\tce qu on ",
 		"peut faire avec\t",
 		"\n\tprint_memory\n\n",
 		"\n\tlol.lol\n \0"};
-	ft_print_memory(str[0], 16);
+	ft_print_memory(str[0], 20);
 }

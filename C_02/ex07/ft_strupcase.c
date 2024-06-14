@@ -1,38 +1,27 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:31:43 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:31:47 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strupcase(char *str);
-char to_upper(char ch);
+char	*ft_strupcase(char *str);
 
-char to_upper(char ch)
+char	*ft_strupcase(char *str)
 {
-	int ch_ascii;
-	int space_between;
-
-	space_between = 'a' - 'A';
-	ch_ascii = ch;
-	return ch_ascii - space_between;
-}
-
-char *ft_strupcase(char *str)
-{
-	char *ptr;
-	int ch;
+	char	*ptr;
 
 	ptr = str;
 	while (*ptr != '\0')
 	{
-		ch = *ptr;
 		if (*ptr >= 'a' && *ptr <= 'z')
-			*ptr = to_upper(*ptr);
+			*ptr = *ptr - ('a' - 'A');
 		ptr++;
 	}
 	return (str);
-}
-
-int main()
-{
-	// char str[] = "abcAb1";
-	char str[] = "alkdklsjgfsAAArtu1213";
-	printf("%s\n", ft_strupcase(str));
-	return (0);
 }

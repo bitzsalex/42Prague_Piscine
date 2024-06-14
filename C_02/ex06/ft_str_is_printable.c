@@ -1,8 +1,18 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:31:25 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:31:30 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_str_is_printable(char *str);
+int	ft_str_is_printable(char *str);
 
-int ft_str_is_printable(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (*str != '\0')
 	{
@@ -11,15 +21,4 @@ int ft_str_is_printable(char *str)
 		str++;
 	}
 	return (1);
-}
-
-int main()
-{
-	printf("is empty printable %d\n", ft_str_is_printable(""));
-	printf("is abABzZ@# printable %d\n", ft_str_is_printable("abABzZ@#"));
-	printf("is ABbbb\r printable %d\n", ft_str_is_printable("ABbbb\r"));
-	printf("is 0123st printable %d\n", ft_str_is_printable("0123st"));
-	printf("is []\n] printable %d\n", ft_str_is_printable("[]\n]"));
-	printf("is []\x7F] printable %d\n", ft_str_is_printable("[]\x7F]"));
-	printf("is []] printable %d\n", ft_str_is_printable("[]]"));
 }

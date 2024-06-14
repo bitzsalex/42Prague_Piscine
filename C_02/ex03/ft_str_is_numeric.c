@@ -1,8 +1,18 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:30:35 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:30:40 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_str_is_numeric(char *str);
+int	ft_str_is_numeric(char *str);
 
-int ft_str_is_numeric(char *str)
+int	ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
@@ -11,13 +21,4 @@ int ft_str_is_numeric(char *str)
 		str++;
 	}
 	return (1);
-}
-
-int main()
-{
-	printf("is empty numeric %d\n", ft_str_is_numeric(""));
-	printf("is 0123456789 numeric %d\n", ft_str_is_numeric("0123456789"));
-	printf("is abcAbc numeric %d\n", ft_str_is_numeric("abcAbc"));
-	printf("is []@] numeric %d\n", ft_str_is_numeric("[]@]"));
-	printf("is . numeric %d\n", ft_str_is_numeric("."));
 }

@@ -1,19 +1,29 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:32:57 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:33:03 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void print_hex(char ch);
-int is_printable(char ch);
-void ft_putstr_non_printable(char *str);
+void	print_hex(char ch);
+void	ft_putstr_non_printable(char *str);
 
-void print_hex(char ch)
+void	print_hex(char ch)
 {
-	char hex[3];
-	int counter;
-	int remainder;
-	int ch_ascii;
+	char	hex[3];
+	int		counter;
+	int		remainder;
+	int		ch_ascii;
 
 	ch_ascii = ch;
-	counter = 2; // to reverse
+	counter = 2;
 	hex[0] = '\\';
 	hex[1] = '0';
 	while (ch_ascii)
@@ -26,33 +36,17 @@ void print_hex(char ch)
 		ch_ascii /= 16;
 		counter--;
 	}
-
 	write(1, hex, 3);
 }
 
-int is_printable(char ch)
-{
-	if (ch < ' ' || ch > '~')
-		return (0);
-	return (1);
-}
-
-void ft_putstr_non_printable(char *str)
+void	ft_putstr_non_printable(char *str)
 {
 	while (*str != '\0')
 	{
-		if (is_printable(*str))
-			write(1, str, 1);
-		else
+		if (*str < ' ' || *str > '~')
 			print_hex(*str);
+		else
+			write(1, str, 1);
 		str++;
 	}
-}
-
-int main()
-{
-	char str[] = "\aCoucou\btu \tvas \nbien \v? \f \r";
-	printf("\\aCoucou\\btu \\tvas \\nbien \\v? \\f \\r become\n");
-	ft_putstr_non_printable(str);
-	return (0);
 }

@@ -1,8 +1,18 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 03:31:04 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 03:31:12 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_str_is_uppercase(char *str);
+int	ft_str_is_uppercase(char *str);
 
-int ft_str_is_uppercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	while (*str != '\0')
 	{
@@ -11,13 +21,4 @@ int ft_str_is_uppercase(char *str)
 		str++;
 	}
 	return (1);
-}
-
-int main()
-{
-	printf("is empty uppercase %d\n", ft_str_is_uppercase(""));
-	printf("is ABCDEFGHIJKLMNOPQRSTUVWXYZ uppercase %d\n", ft_str_is_uppercase("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
-	printf("is ABbbb uppercase %d\n", ft_str_is_uppercase("ABbbb"));
-	printf("is 0123st uppercase %d\n", ft_str_is_uppercase("0123st"));
-	printf("is []\\] uppercase %d\n", ft_str_is_uppercase("[]\\]"));
 }
