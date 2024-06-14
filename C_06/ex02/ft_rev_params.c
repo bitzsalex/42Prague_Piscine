@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 00:03:21 by bdesaleg          #+#    #+#             */
-/*   Updated: 2024/06/15 00:03:24 by bdesaleg         ###   ########.fr       */
+/*   Created: 2024/06/15 00:14:11 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/15 00:14:13 by bdesaleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,7 @@ void	print_str(char *str)
 
 int	main(int argc, char **argv)
 {
-	int	itr;
-
-	if (argc > 1)
-	{
-		itr = 1;
-		while (argv[itr])
-		{
-			print_str(argv[itr]);
-			itr++;
-		}
-	}
+	while (argc-- > 1)
+		print_str(argv[argc]);
 	return (0);
 }
