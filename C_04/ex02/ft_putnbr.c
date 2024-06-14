@@ -1,41 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 05:30:24 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 05:30:27 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <limits.h>
 
-void ft_putnbr(int num);
-void print_digits(int num);
+void	ft_putnbr(int num);
+void	print_char(char ch);
 
-void print_digits(int num)
+void	print_char(char ch)
 {
-	char ch;
-
-	if (num == 0)
-		return;
-	print_digits(num / 10);
-	ch = (num % 10) + '0';
 	write(1, &ch, 1);
 }
 
-void ft_putnbr(int num)
+void	ft_putnbr(int num)
 {
-	if (num >= INT_MIN && num <= INT_MAX)
+	unsigned int	unum;
+
+	if (num == 0)
+		print_char('0');
+	else
 	{
-		if (num == 0)
-		{
-			write(1, "0", 1);
-			return;
-		}
+		unum = num;
 		if (num < 0)
 		{
-			write(1, "-", 1);
-			num *= -1;
+			unum = num * -1;
+			print_char('-');
 		}
-		print_digits(num);
+		if ((unum / 10) != 0)
+			ft_putnbr(unum / 10);
+		print_char((unum % 10) + '0');
 	}
-}
-
-int main()
-{
-	ft_putnbr(4563);
-	ft_putnbr(-4563);
-	return 0;
 }
