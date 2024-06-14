@@ -1,22 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/10 17:31:39 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/10 17:31:58 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void);
+void	ft_print_reverse_alphabet(void);
 
-void ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
-    // the same ASCII conversion will happen
-    // as we saw in the previous exercise
-    int iterator = 'z';
+	int	iterator;
 
-    while (iterator >= 'a')
-    {
-        write(1, &iterator, 1);
-        iterator--;
-    }
-}
-
-int main()
-{
-    ft_print_reverse_alphabet();
-    return 0;
+	iterator = 'z';
+	while (iterator >= 'a')
+	{
+		write(1, &iterator, 1);
+		iterator--;
+	}
 }

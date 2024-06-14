@@ -116,18 +116,3 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	}
 	return (addr);
 }
-
-#include <stdio.h>
-#include <unistd.h>
-
-int main()
-{
-	char str[6][20] = {
-		"Bonjour les amin",
-		"ches\t\n\tc\a est fo",
-		"u\ttout\tce qu on ",
-		"peut faire avec\t",
-		"\n\tprint_memory\n\n",
-		"\n\tlol.lol\n \0"};
-	ft_print_memory(str[0], 20);
-}

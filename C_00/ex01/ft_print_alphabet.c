@@ -1,23 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/10 17:13:06 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/10 17:17:06 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void);
+void	ft_print_alphabet(void);
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-    // the data type of int here cast the character
-    // to ASCII equivalent of the character
-    int iterator = 'a';
+	int	iterator;
 
-    // the same ASCII conversion will happen on comparison as well
-    while (iterator <= 'z')
-    {
-        write(1, &iterator, 1);
-        iterator++;
-    }
-}
-
-int main()
-{
-    ft_print_alphabet();
-    return 0;
+	iterator = 'a';
+	while (iterator <= 'z')
+	{
+		write(1, &iterator, 1);
+		iterator++;
+	}
 }
