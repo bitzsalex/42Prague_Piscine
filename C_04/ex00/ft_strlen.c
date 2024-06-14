@@ -1,21 +1,26 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/14 05:20:24 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/14 05:20:31 by bdesaleg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(char *str);
+int	ft_strlen(char *str);
+int	count_chars(char *str, int count);
 
-int ft_strlen(char *str)
+int	count_chars(char *str, int count)
 {
-	int length;
-
-	length = 0;
-	while (*str != '\0')
-	{
-		length++;
-		str++;
-	}
-	return length;
+	if (*str == '\0')
+		return (count);
+	return (count_chars(str + 1, count + 1));
 }
 
-int main()
+int	ft_strlen(char *str)
 {
-	printf("length of Betizazu is %d", ft_strlen("Betizazu"));
+	return (count_chars(str, 0));
 }
