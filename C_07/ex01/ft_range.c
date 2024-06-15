@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bdesaleg <marvin@42.ft>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 11:15:08 by bdesaleg          #+#    #+#             */
-/*   Updated: 2024/06/15 11:15:11 by bdesaleg         ###   ########.fr       */
+/*   Created: 2024/06/15 11:25:44 by bdesaleg          #+#    #+#             */
+/*   Updated: 2024/06/15 11:25:47 by bdesaleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src);
-char	*str_cpy(char *dest, char *src);
+int	*ft_range(int min, int max);
 
-char	*str_cpy(char *dest, char *src)
+int	*ft_range(int min, int max)
 {
-	if (*src == '\0')
+	int	*ptr;
+	int	itr;
+	int	diff;
+
+	ptr = NULL;
+	if (max > min)
 	{
-		*dest = '\0';
-		return (dest);
+		diff = max - min;
+		if (diff < 0)
+			diff *= -1;
+		itr = 0;
+		ptr = malloc(diff);
+		while (min < max)
+		{
+			ptr[itr] = min;
+			min++;
+			itr++;
+		}
 	}
-	*dest = *src;
-	str_cpy(dest + 1, src + 1);
-	return (dest);
-}
-
-// size multiplication might be required for different compilors
-char	*ft_strdup(char *src)
-{
-	int	length;
-
-	length = 0;
-	while (src[length] != '\0')
-		length++;
-	return (str_cpy(malloc(++length), src));
+	return (ptr);
 }
