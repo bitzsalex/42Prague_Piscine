@@ -48,6 +48,7 @@ void	ft_initialize(int argc, char **argv)
 	int	**board;
 	int	input_length;
 	int	*input_array;
+	int	solution;
 
 	if (ft_are_arguments_correct(argc, argv))
 	{
@@ -57,6 +58,15 @@ void	ft_initialize(int argc, char **argv)
 			ft_print_str("Your input for the views are incorrect\n");
 			return ;
 		}
-		board = ft_create_board(input_length / 4);
+		g_size = input_length / 4;
+		board = ft_create_board(g_size);
+		for (int i = 0; i < input_length; i++)
+			printf("%d", input_array[i]);
+		// ft_print_board(board, g_size);
+		// solution = ft_solver(board, input_array, 0, 0);
+		// if (solution)
+		// 	ft_print_board(board, g_size);
+		// else
+		// 	ft_print_str("No solutions found!\n");
 	}
 }

@@ -14,6 +14,7 @@
 
 int	main(int argc, char **argv)
 {
+	g_size = 0;
 	ft_initialize(argc, argv);
 	return (0);
 }
