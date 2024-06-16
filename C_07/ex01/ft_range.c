@@ -20,19 +20,19 @@ int	*ft_range(int min, int max)
 	int	itr;
 	int	diff;
 
-	ptr = NULL;
 	if (max > min)
 	{
 		diff = max - min;
-		if (diff < 0)
-			diff *= -1;
 		itr = 0;
-		ptr = malloc(diff);
-		while (min < max)
+		ptr = malloc(diff * sizeof(int));
+		if (ptr != NULL)
 		{
-			ptr[itr] = min;
-			min++;
-			itr++;
+			while (min < max)
+			{
+				ptr[itr] = min;
+				min++;
+				itr++;
+			}
 		}
 	}
 	return (ptr);
