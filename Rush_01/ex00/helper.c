@@ -58,11 +58,5 @@ void	ft_initialize(int argc, char **argv)
 			return ;
 		}
 		board = ft_create_board(input_length / 4);
-		int	size = input_length / 4;
-		for (int i = 0; i < size; i++)
-			for (int j = 0; j < size; j++)
-				board[i][j] = i * j;
-		printf("after populating the board");
-		ft_print_board(board, size);
 	}
 }
