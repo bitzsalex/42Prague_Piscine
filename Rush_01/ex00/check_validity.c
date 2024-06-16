@@ -12,6 +12,8 @@
 
 #include "header.h"
 
+extern int	g_size;
+
 void	update_current_count(int value, int *higher, int *count)
 {
 	if (value > *higher)

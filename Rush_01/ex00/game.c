@@ -12,6 +12,8 @@
 
 #include "header.h"
 
+extern int	g_size;
+
 // check view row wise
 int	ft_check_row_view(int **board, int *views, int row)
 {
@@ -89,8 +91,9 @@ int	ft_solver(int **board, int *views, int row, int col)
 		return (ft_is_it_solved(board, views));
 	if (col == g_size)
 	{
-		col = 0;
-		row++;
+		if (ft_check_row_view(board, views, row))
+			return (ft_solver(board, views, row + 1, 0));
+		return (0);
 	}
 	if (board[row][col] != 0)
 		return (ft_solver(board, views, row, col + 1));

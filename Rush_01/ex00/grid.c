@@ -12,6 +12,8 @@
 
 #include "header.h"
 
+extern int	g_size;
+
 // creates the board and initiates the board with 0
 int	**ft_create_board(int size)
 {
@@ -47,7 +49,7 @@ void	ft_print_board(int **board, int size)
 	int		itrj;
 
 	itr = 0;
-	ch[0] = '\t';
+	ch[0] = ' ';
 	ch[2] = '\0';
 	while (itr < size)
 	{

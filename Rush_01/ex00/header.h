@@ -14,9 +14,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-// global variable
-static int	g_size;
-
 // validity checking helper functions
 void	update_current_count(int value, int *higher, int *count);
 int		ft_check_from_left(int **board, int *views, int row);

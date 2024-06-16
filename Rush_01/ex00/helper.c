@@ -12,6 +12,9 @@
 
 #include "header.h"
 
+// global variable
+int	g_size;
+
 char	*ft_left_trim(char *str)
 {
 	while (*str == ' ')
@@ -59,14 +62,14 @@ void	ft_initialize(int argc, char **argv)
 			return ;
 		}
 		g_size = input_length / 4;
-		board = ft_create_board(g_size);
-		for (int i = 0; i < input_length; i++)
-			printf("%d", input_array[i]);
-		// ft_print_board(board, g_size);
-		// solution = ft_solver(board, input_array, 0, 0);
-		// if (solution)
-		// 	ft_print_board(board, g_size);
-		// else
-		// 	ft_print_str("No solutions found!\n");
+		board = ft_create_board(input_length / 4);
+		solution = ft_solver(board, input_array, 0, 0);
+		if (solution)
+		{
+			ft_print_str("Found solution, and it looks like:\n");
+			ft_print_board(board, input_length / 4);
+		}
+		else
+			ft_print_str("No solutions found!\n");
 	}
 }
