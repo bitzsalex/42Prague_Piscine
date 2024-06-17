@@ -28,10 +28,9 @@ void	ft_print_str(char *str)
 		write(1, str++, 1);
 }
 
-int	ft_are_arguments_correct(int argc, char **argv)
+int	ft_are_arguments_correct(int argc)
 {
 	char	*error;
-	int		**board;
 
 	error = NULL;
 	if (argc == 1)
@@ -53,7 +52,7 @@ void	ft_initialize(int argc, char **argv)
 	int	*input_array;
 	int	solution;
 
-	if (ft_are_arguments_correct(argc, argv))
+	if (ft_are_arguments_correct(argc))
 	{
 		input_array = ft_get_input_array(argv[1], &input_length);
 		if (input_array == NULL)
