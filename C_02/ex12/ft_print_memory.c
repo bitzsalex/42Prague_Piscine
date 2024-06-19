@@ -64,7 +64,7 @@ void	print_content_hex(char *addr, int size)
 			write(1, " ", 1);
 		write(1, get_hex_representation((int)*addr, hex, 2), 2);
 		counter -= 2;
-		if (*addr == '\0')
+		if (*addr == '\0' && *(addr + 1) == '\0')
 			break ;
 		addr++;
 		itr++;
@@ -90,7 +90,7 @@ void	print_content_char(char *addr, int size)
 			write(1, ".", 1);
 		else
 			write(1, addr, 1);
-		if (*addr == '\0')
+		if (*addr == '\0' && *(addr + 1) == '\0')
 			break ;
 		addr++;
 		itr++;
@@ -102,7 +102,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 {
 	char	*ptr;
 
-	if (size)
+	if (size > 0)
 	{
 		ptr = (char *)addr;
 		while (*ptr != '\0')
@@ -115,4 +115,15 @@ void	*ft_print_memory(void *addr, unsigned int size)
 		}
 	}
 	return (addr);
+}
+
+#include <stdio.h>
+int main(void)
+{
+	char str[] = "Print \tstring with more than 16\n "\
+					"bytes output \rThis is a long \bstring. "\
+					"It has more \0 than 16 bytes. as expecte."\
+					"Print \t\tempty string output \"\" as expected";
+	ft_print_memory(str, 16);
+	return (0);
 }
