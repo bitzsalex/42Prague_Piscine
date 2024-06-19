@@ -116,14 +116,3 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	}
 	return (addr);
 }
-
-#include <stdio.h>
-int main(void)
-{
-	char str[] = "Print \tstring with more than 16\n "\
-					"bytes output \rThis is a long \bstring. "\
-					"It has more \0 than 16 bytes. as expecte."\
-					"Print \t\tempty string output \"\" as expected";
-	ft_print_memory(str, 16);
-	return (0);
-}

@@ -26,7 +26,7 @@ void	print_hex(char ch)
 	counter = 2;
 	hex[0] = '\\';
 	hex[1] = '0';
-	while (ch_ascii)
+	while (ch_ascii > 0 && counter > 0)
 	{
 		remainder = ch_ascii % 16;
 		if (remainder < 10)
