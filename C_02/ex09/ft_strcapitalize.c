@@ -16,9 +16,8 @@ int		is_alphanum(char ch);
 
 int	check_case(char ch, int type)
 {
-	if (
-		(type == 0 && (ch >= 'a' && ch <= 'z'))
-		|| (type == 1 && (ch >= 'A' && ch <= 'Z')))
+	if ((type == 0 && ch >= 'a' && ch <= 'z')
+		|| (type == 1 && ch >= 'A' && ch <= 'Z'))
 		return (1);
 	return (0);
 }
