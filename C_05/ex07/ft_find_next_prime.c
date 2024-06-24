@@ -28,11 +28,7 @@ int	is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (1)
-	{
-		if (is_prime(nb))
-			return (nb);
+	while (!is_prime(nb))
 		nb++;
-	}
-	return (0);
+	return (nb);
 }
