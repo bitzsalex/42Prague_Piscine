@@ -22,9 +22,10 @@ char	*clean_front(char *str, int *sign)
 
 	ptr = str;
 	negatives = 0;
-	while (*ptr != '\0' && (*ptr == ' ' || *ptr == '-' || *ptr == '+'))
+	while (*ptr != '\0'
+		&& (*ptr <= ' ' || *ptr > '~' || *ptr == '-' || *ptr == '+'))
 	{
-		if ((ptr != str && *ptr == ' '
+		if ((ptr != str && (*ptr <= ' ' || *ptr > '~')
 				&& (*(ptr - 1) == '-' || *(ptr - 1) == '+')))
 			break ;
 		if (*ptr == '-')

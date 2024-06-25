@@ -59,10 +59,3 @@ int	ft_atoi(char *str)
 	}
 	return ((int)(result * multiplier));
 }
-
-#include <stdio.h>
-int main(void)
-{
-	printf("%d\n", ft_atoi("   \t   ---++175074925"));
-	return (0);
-}
