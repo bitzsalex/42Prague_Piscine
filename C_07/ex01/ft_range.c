@@ -17,21 +17,19 @@ int	*ft_range(int min, int max);
 int	*ft_range(int min, int max)
 {
 	int	*ptr;
-	int	itr;
-	int	diff;
+	int	init;
 
+	ptr = NULL;
 	if (max > min)
 	{
-		diff = max - min;
-		itr = 0;
-		ptr = malloc(diff * sizeof(int));
+		init = min;
+		ptr = (int *)malloc((max - min) * sizeof(int));
 		if (ptr != NULL)
 		{
 			while (min < max)
 			{
-				ptr[itr] = min;
+				ptr[min - init] = min;
 				min++;
-				itr++;
 			}
 		}
 	}
