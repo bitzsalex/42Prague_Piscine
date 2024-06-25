@@ -30,7 +30,7 @@ int	ft_getsize(char **strs, char *sep, int size)
 		total_size += ft_strlen(strs[itr]);
 		itr++;
 	}
-	return (total_size);
+	return (++total_size);
 }
 
 int	ft_strlen(char *str)
@@ -60,26 +60,24 @@ int	ft_append_str(char *dest, char *src, int start_pos)
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		itr;
-	int		full_size;
 	int		index;
 	char	*str;
 
+	index = 0;
 	if (size > 0)
 	{
 		itr = 0;
-		index = 0;
-		full_size = ft_getsize(strs, sep, size) + 1;
-		str = malloc(sizeof(char) * full_size);
+		str = (char *)malloc(sizeof(char) * ft_getsize(strs, sep, size));
 		while (itr < size)
 		{
 			index = ft_append_str(str, strs[itr], index);
-			if (itr != size - 1)
+			if (itr != (size - 1))
 				index = ft_append_str(str, sep, index);
 			itr++;
 		}
-		str[index] = '\0';
 	}
 	else
-		str = malloc(sizeof(char));
+		str = (char *)malloc(sizeof(char));
+	str[index] = '\0';
 	return (str);
 }
