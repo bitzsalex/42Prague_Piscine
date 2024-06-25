@@ -46,7 +46,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	{
 		*range = ft_range(min, max);
 		if (*range == NULL)
-			returnable = -1;;
+			returnable = -1;
 	}
 	else
 		returnable = 0;

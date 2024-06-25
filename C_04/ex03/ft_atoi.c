@@ -13,18 +13,26 @@
 char	*clean_front(char *str, int *sign);
 int		ft_atoi(char *str);
 
+int	is_space(char ch)
+{
+	if (ch <= ' ' || ch > '~')
+		return (1);
+	return (0);
+}
+
 char	*clean_front(char *str, int *sign)
 {
 	char	*ptr;
 	int		negatives;
+	int		is_ptr_space;
 
 	ptr = str;
 	negatives = 0;
 	while (*ptr != '\0')
 	{
-		if (!(*ptr == ' ' || *ptr == '-' || *ptr == '+')
-			|| (ptr != str && *ptr == ' '
-				&& (*(ptr - 1) == '-' || *(ptr - 1) == '+')))
+		is_ptr_space = is_space(*ptr);
+		if (!(is_ptr_space || *ptr == '-' || *ptr == '+')
+			|| (ptr != str && is_ptr_space && !is_space(*(ptr - 1))))
 			break ;
 		if (*ptr == '-')
 			negatives++;
@@ -50,4 +58,11 @@ int	ft_atoi(char *str)
 		str++;
 	}
 	return ((int)(result * multiplier));
+}
+
+#include <stdio.h>
+int main(void)
+{
+	printf("%d\n", ft_atoi("   \t   ---++175074925"));
+	return (0);
 }

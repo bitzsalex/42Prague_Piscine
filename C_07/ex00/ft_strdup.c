@@ -30,7 +30,7 @@ char	*str_cpy(char *dest, char *src)
 // size multiplication might be required for different compilors
 char	*ft_strdup(char *src)
 {
-	int	length;
+	int		length;
 	char	*dest;
 
 	length = 0;
