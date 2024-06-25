@@ -72,6 +72,9 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 				result[itr].size = ft_length(av[itr]);
 				itr++;
 			}
+			result[itr].str = "0";
+			result[itr].copy = "0";
+			result[itr].size = 1;
 		}
 	}
 	return (result);
