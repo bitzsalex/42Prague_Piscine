@@ -31,9 +31,13 @@ char	*str_cpy(char *dest, char *src)
 char	*ft_strdup(char *src)
 {
 	int	length;
+	char	*dest;
 
 	length = 0;
 	while (src[length] != '\0')
 		length++;
-	return (str_cpy(malloc(++length), src));
+	dest = (char *)malloc(++length * sizeof(char));
+	if (!dest)
+		return (NULL);
+	return (str_cpy(dest, src));
 }
