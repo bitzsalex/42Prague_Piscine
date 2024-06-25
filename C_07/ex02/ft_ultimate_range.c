@@ -17,17 +17,20 @@ int	ft_ultimate_range(int **range, int min, int max);
 int	*ft_range(int min, int max)
 {
 	int	*ptr;
-	int	itr;
+	int	init;
 
-	itr = 0;
-	ptr = malloc((max - min) * sizeof(int));
-	if (ptr != NULL)
+	ptr = NULL;
+	if (max > min)
 	{
-		while (min < max)
+		init = min;
+		ptr = (int *)malloc((max - min) * sizeof(int));
+		if (ptr != NULL)
 		{
-			ptr[itr] = min;
-			min++;
-			itr++;
+			while (min < max)
+			{
+				ptr[min - init] = min;
+				min++;
+			}
 		}
 	}
 	return (ptr);
@@ -35,13 +38,17 @@ int	*ft_range(int min, int max)
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	if (max <= min)
+	int	returnable;
+
+	returnable = max - min;
+	*range = NULL;
+	if (max > min)
 	{
-		*range = NULL;
-		return (0);
+		*range = ft_range(min, max);
+		if (*range == NULL)
+			returnable = -1;;
 	}
-	*range = ft_range(min, max);
-	if (*range == NULL)
-		return (-1);
-	return (max - min);
+	else
+		returnable = 0;
+	return (returnable);
 }
