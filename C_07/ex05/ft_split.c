@@ -97,6 +97,7 @@ void	ft_fill(char **result, char *str, char *seps)
 			result[itr] = ft_extract_string(&ptr, seps);
 			itr++;
 		}
+		result[itr] = "0";
 	}
 }
 
@@ -106,7 +107,7 @@ char	**ft_split(char *str, char *charset)
 	int		num_of_pointers;
 
 	num_of_pointers = ft_get_pointers_len(str, charset);
-	strs = (char **)malloc(sizeof(char *) * num_of_pointers);
+	strs = (char **)malloc(sizeof(char *) * (num_of_pointers + 1));
 	if (*str != '\0')
 	{
 		if (strs != NULL)

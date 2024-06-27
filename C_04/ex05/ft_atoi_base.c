@@ -108,6 +108,9 @@ int	ft_atoi_base(char *str, char *base)
 	while (str[digits] != '\0' && get_digit_value(base, str[digits]) != -1)
 		digits++;
 	while (digits > 0)
-		result += get_digit_value(base, *str++) * get_power(length, --digits);
+	{
+		result += get_digit_value(base, *str++) * get_power(length, digits - 1);
+		digits--;
+	}
 	return ((int)(result * multiplier));
 }
